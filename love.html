@@ -44,7 +44,8 @@
                     </div>
                 </div>
                 <div id="clock-box">
-                    <a>@mongeng</a> 与 <a href="./images/gallery.html">@gmy199668</a> 在一起的
+                    <!-- <a>@mongeng</a> 与 <a href="./images/gallery.html">@gmy199668</a> 在一起的 -->
+					<a>@mongeng</a> 与 <a id="pwd">@gmy199668</a> 在一起的
                         <div id="clock"></div>
                 </div>
                 <canvas id="canvas" width="1100" height="680"></canvas>
@@ -56,7 +57,9 @@
     </script>
 
     <script>
+
     (function(){
+		
         var canvas = $('#canvas');
 
         if (!canvas[0].getContext) {
@@ -215,7 +218,21 @@
         }));
 
         runAsync().start();
+
+
+		
     })();
+	// check the password
+	var a_click = $('#pwd');
+	a_click.click(function(e) {
+		var pass1 = prompt('请输入小可爱最喜欢的颜色 (英文)','');
+		pass_str = pass1.charCodeAt(0) + pass1.charCodeAt(1) + pass1.charCodeAt(2) + pass1.charCodeAt(3)
+		if (pass_str == 424){
+			alert('密码正确，进行跳转');   
+			window.location.href="./images/gallery.html"
+		}
+		
+	});
     </script>
 
 
